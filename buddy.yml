@@ -1,4 +1,4 @@
-  - action: "Execute: ./circleci/build.sh"
+  - action: "Execute: bash ./circleci/build.sh"
     type: "BUILD"
     working_directory: "/buddy/my-kernel"
     docker_image_name: "z4nyx/docker"
