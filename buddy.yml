@@ -1,5 +1,3 @@
-  - actions:
-    action: "pwd"
     type: "BUILD"
     working_directory: "/buddy/my-kernel"
     docker_image_name: "z4nyx/docker"
