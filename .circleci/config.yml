@@ -3,12 +3,12 @@ jobs:
   compile:
    docker:
       - image: z4nyx/docker:latest
-   parallelism: 4
+   parallelism: 16
    steps:
       - run:
           command: |
-           git config --global user.name "The3ven"
-           git config --global user.email "labafix789@zoeyy.com"
+           git config --global user.name "aditya7066"
+           git config --global user.email "adityasinghfab66@gmail.com"
            git config --global color.ui false
            git clone --depth=1 https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} -b ${CIRCLE_BRANCH} .
            bash .circleci/build.sh
