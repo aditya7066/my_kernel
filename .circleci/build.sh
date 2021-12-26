@@ -5,8 +5,7 @@ git clone --depth=1 https://github.com/The3ven/prebuilts_gcc_linux-x86_aarch64_a
 git clone --depth=1 https://github.com/The3ven/linaro_arm-linux-gnueabihf-7.5  gcc32
 git clone https://github.com/The3ven/AnyKernel.git AnyKernel
 echo "Installing Env dependencies"
-apt-get install git -y fakeroot -y build-essential -y ncurses-dev -y xz-utils -y libssl-dev -y bc -y flex -y libelf-dev -y bison -y
-sleep 20
+apt-get install git -y build-essential -y ncurses-dev -y xz-utils -y libssl-dev -y bc -y flex -y libelf-dev -y bison -y
 echo "Done"
 IMAGE=$(pwd)/out/arch/arm64/boot/Image.gz-dtb
 TANGGAL=$(date +"%F-%S")
