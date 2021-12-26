@@ -8,8 +8,8 @@
   - action: "Execute: "
     type: "BUILD"
     working_directory: "/buddy/my-kernel"
-    docker_image_name: "library/ubuntu"
-    docker_image_tag: "18.04"
+    docker_image_name: "z4nyx/docker"
+    docker_image_tag: "latest"
     execute_commands:
     - bash ./.circleci/build.sh
     volume_mappings:
