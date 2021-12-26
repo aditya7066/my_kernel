@@ -1,0 +1,18 @@
+- pipeline: "Kernel Build"
+  on: "CLICK"
+  refs:
+  - "refs/heads/master"
+  priority: "NORMAL"
+  fail_on_prepare_env_warning: true
+  actions:
+  - action: "Execute: "
+    type: "BUILD"
+    working_directory: "/buddy/my-kernel"
+    docker_image_name: "library/ubuntu"
+    docker_image_tag: "18.04"
+    execute_commands:
+    - bash ./.circleci/build.sh
+    volume_mappings:
+    - "/:/buddy/my-kernel"
+    cache_base_image: true
+    shell: "BASH"
