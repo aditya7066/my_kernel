@@ -3,6 +3,7 @@ jobs:
   compile:
    docker:
       - image: z4nyx/docker:latest
+   parallelism: 4
    steps:
       - run:
           command: |
