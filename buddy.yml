@@ -1,18 +1,19 @@
-- pipeline: "Kernel Build"
-  on: "CLICK"
-  refs:
-  - "refs/heads/master"
-  priority: "NORMAL"
-  fail_on_prepare_env_warning: true
-  actions:
-  - action: "Execute: "
+  - action: "Execute: ./circleci/build.sh"
     type: "BUILD"
     working_directory: "/buddy/my-kernel"
     docker_image_name: "z4nyx/docker"
     docker_image_tag: "latest"
     execute_commands:
-    - bash ./.circleci/build.sh
+    - "echo "Hello""
+    - "echo $pwd"
+    setup_commands:
+    - "apt-get install -y git"
+    - "git clone https://github.com/akhilnarang/scripts"
+    - "cd scripts"
+    - "bash setup/android_build_env.sh"
+    - "cd"
+    - "bash ./circleci/build.sh"
     volume_mappings:
     - "/:/buddy/my-kernel"
-    cache_base_image: true
     shell: "BASH"
+    timeout: 100
