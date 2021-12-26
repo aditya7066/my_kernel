@@ -1,11 +1,11 @@
-  - action: "Execute: bash ./circleci/build.sh"
+  - actions:
+    action: "pwd"
     type: "BUILD"
     working_directory: "/buddy/my-kernel"
     docker_image_name: "z4nyx/docker"
     docker_image_tag: "latest"
     execute_commands:
     - "echo "Hello""
-    - "echo $pwd"
     setup_commands:
     - "apt-get install -y git"
     - "git clone https://github.com/akhilnarang/scripts"
